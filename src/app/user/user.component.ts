@@ -15,7 +15,7 @@ export class UserComponent {
   @Output() userSelected = new EventEmitter<string>();
 
   get imagePath() {
-    return `assets/users/${this.user.id}`
+    return `assets/users/${this.user.avatar}`
   }
 
   onSelectUser() {
