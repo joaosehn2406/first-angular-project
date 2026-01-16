@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {HeaderComponent} from './header/header.component';
 import {UserComponent} from './user/user.component';
 import {DUMMY_USERS} from './dummy-users';
@@ -11,4 +11,8 @@ import {DUMMY_USERS} from './dummy-users';
 })
 export class App {
   users = DUMMY_USERS;
+
+  onUserSelected(userId: string) {
+    console.log('Selected user with id ' + userId);
+  }
 }
