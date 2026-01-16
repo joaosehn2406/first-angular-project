@@ -4,36 +4,28 @@
   <ul id="users">
     <li>
       <app-user
-        [userId]="users[0].id"
-        [userAvatar]="users[0].avatar"
-        [userName]="users[0].name"
+        [user]="users[0]"
         (userSelected)="onUserSelected($event)"
       />
 
     </li>
     <li>
       <app-user
-        [userId]="users[1].id"
-        [userAvatar]="users[1].avatar"
-        [userName]="users[1].name"
+        [user]="users[1]"
         (userSelected)="onUserSelected($event)"
       />
 
     </li>
     <li>
       <app-user
-        [userId]="users[2].id"
-        [userAvatar]="users[2].avatar"
-        [userName]="users[2].name"
+        [user]="users[2]"
         (userSelected)="onUserSelected($event)"
       />
 
     </li>
     <li>
       <app-user
-        [userId]="users[3].id"
-        [userAvatar]="users[3].avatar"
-        [userName]="users[3].name"
+        [user]="users[3]"
         (userSelected)="onUserSelected($event)"
       />
     </li>
