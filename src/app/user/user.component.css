@@ -9,7 +9,8 @@ button {
   align-items: center;
   gap: 0.5rem;
   padding: 0.35rem 0.5rem;
-  background-color: #433352;
+  border-radius: 6px;
+  background-color: #3a2c54;
   color: #c3b3d1;
   border: none;
   font: inherit;
@@ -19,9 +20,17 @@ button {
   text-align: left;
 }
 
-button:hover,
-button:active,
-.active {
+button:hover {
+  background-color: #7b5aa8;
+  color: #c3b3d1;
+}
+
+button:active {
+  background-color: #7f4bcc;
+  color: #150722;
+}
+
+button.active {
   background-color: #9965dd;
   color: #150722;
 }
