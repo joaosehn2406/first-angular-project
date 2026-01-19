@@ -7,6 +7,11 @@ html {
   height: 100%;
 }
 
+*::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   background: radial-gradient(circle at top left, #181023, #0b0519);
