@@ -1,5 +1,11 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 
+interface User {
+  id: string,
+  name: string,
+  avatar: string
+}
+
 @Component({ //@component is a decorator
   selector: 'app-user',
   imports: [],
@@ -7,11 +13,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
   styleUrl: './user.component.css',
 })
 export class UserComponent {
-  @Input({required: true}) user!: {
-    id: string;
-    avatar: string;
-    name: string;
-  }
+  @Input({required: true}) user!: User
   @Output() userSelected = new EventEmitter<string>();
 
   get imagePath() {
