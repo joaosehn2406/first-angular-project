@@ -1,8 +1,9 @@
 import {Component} from '@angular/core';
 import {HeaderComponent} from './header/header.component';
 import {UserComponent} from './user/user.component';
-import {DUMMY_USERS} from './dummy-users';
+import {DUMMY_USERS} from './data/dummy-users';
 import {Tasks} from './tasks/tasks';
+import {DUMMY_USER_TASKS} from './data/dummy-tasks';
 
 @Component({
   selector: 'app-root',
@@ -12,10 +13,16 @@ import {Tasks} from './tasks/tasks';
 })
 export class App {
   users = DUMMY_USERS;
+  userTasks = DUMMY_USER_TASKS;
+
   userId?: string;
 
   get getSelectedUser() {
     return this.users.find((user) => user.id === this.userId)
+  }
+
+  get getAllUserTasks() {
+    return this.userTasks.filter((task) => task.userId === this.userId)
   }
 
   onUserSelected(userId: string) {
