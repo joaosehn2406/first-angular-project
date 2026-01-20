@@ -13,7 +13,7 @@
   </ul>
 
   @if (selectedUser) {
-    <app-tasks [userName]="selectedUser.name" [userTasks]="getAllUserTasks" (complete)="onCompleteTask($event)"/>
+    <app-tasks [userName]="selectedUser.name" [userTasks]="getAllUserTasks" (completeTask)="onCompleteTask($event)"/>
   } @else {
     <p id="fallback">Select a user to see it's tasks!</p>
   }

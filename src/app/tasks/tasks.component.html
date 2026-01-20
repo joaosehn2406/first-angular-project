@@ -1,8 +1,12 @@
+@if (canShowModal) {
+  <app-modal/>
+}
+
 <section id="tasks">
   <header>
     <h2>{{ userName }}'s Tasks</h2>
     <menu>
-      <button>Add task</button>
+      <button (click)="onClickOpenCreationModal()">Add task</button>
     </menu>
   </header>
 
