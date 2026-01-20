@@ -1,14 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Task} from './task/task';
 
-interface TaskItem {
-  id: string,
-  userId: string,
-  title: string,
-  summary: string,
-  dueDate: string
-}
-
 type UserTasks = TaskItem[];
 
 @Component({
