@@ -1,6 +1,6 @@
 <section id="tasks">
   <header>
-    <h2>{{ userName }}'s Tasks</h2>
+    <h2>{{ userName }}'s TasksComponent</h2>
     <menu>
       <button>Add task</button>
     </menu>
@@ -9,7 +9,7 @@
   <ul id="tasks-list">
     @for (task of userTasks; track task.id) {
       <li>
-        <app-task [userTasks]="task"/>
+        <app-task [userTasks]="task" (complete)="onCompleteTask($event)"/>
       </li>
     }
   </ul>
