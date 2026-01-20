@@ -24,7 +24,7 @@ export class TasksComponent {
     this.completeTask.emit(id);
   }
 
-  onClickOpenCreationModal() {
+  onClickManageModal() {
     this.canShowModal = !this.canShowModal
   }
 }
