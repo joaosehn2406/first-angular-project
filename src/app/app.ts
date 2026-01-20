@@ -2,12 +2,12 @@ import {Component} from '@angular/core';
 import {HeaderComponent} from './header/header.component';
 import {UserComponent} from './user/user.component';
 import {DUMMY_USERS} from './data/dummy-users';
-import {Tasks} from './tasks/tasks';
+import {TasksComponent} from './tasks/tasks.component';
 import {DUMMY_USER_TASKS} from './data/dummy-tasks';
 
 @Component({
   selector: 'app-root',
-  imports: [HeaderComponent, UserComponent, Tasks],
+  imports: [HeaderComponent, UserComponent, TasksComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -27,5 +27,9 @@ export class App {
 
   onUserSelected(userId: string) {
     this.userId = userId
+  }
+
+  onCompleteTask(id: string) {
+    this.userTasks = this.userTasks?.filter((task) => task.id !== id)
   }
 }
