@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {TaskComponent} from './task/task.component';
-import {Modal} from './modal/modal';
+import {ModalComponent} from './modal/modal.component';
 
 type UserTasks = TaskItem[];
 
@@ -8,7 +8,7 @@ type UserTasks = TaskItem[];
   selector: 'app-tasks',
   imports: [
     TaskComponent,
-    Modal
+    ModalComponent
   ],
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.css',
