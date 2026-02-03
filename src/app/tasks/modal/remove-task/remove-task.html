@@ -1,0 +1,17 @@
+<div class="backdrop"></div>
+<dialog open>
+  <header>
+    <figure>
+      <img src="assets/alert_icon.png" alt="Alert"/>
+    </figure>
+
+    <h1 id="remove-task-title">Remove Task</h1>
+  </header>
+
+  <form (ngSubmit)="onClickConfirmModal()">
+    <menu>
+      <button class="action-cancel" type="button" (click)="onClickDismissModal()">Cancel</button>
+      <button class="action-confirm" type="submit">Confirm</button>
+    </menu>
+  </form>
+</dialog>
