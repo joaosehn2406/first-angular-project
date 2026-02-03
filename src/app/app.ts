@@ -4,6 +4,7 @@ import {UserComponent} from './user/user.component';
 import {DUMMY_USERS} from './data/dummy-users';
 import {TasksComponent} from './tasks/tasks.component';
 import {DUMMY_USER_TASKS} from './data/dummy-tasks';
+import {TaskItem} from './tasks/task/task.model.component';
 
 @Component({
   selector: 'app-root',
@@ -31,5 +32,9 @@ export class App {
 
   onCompleteTask(id: string) {
     this.userTasks = this.userTasks?.filter((task) => task.id !== id)
+  }
+
+  onCreateTask(task: TaskItem) {
+    this.userTasks.unshift(task)
   }
 }

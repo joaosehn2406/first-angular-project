@@ -1,15 +1,19 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import {ModalModelComponent} from './modal.model.component';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-modal',
-  imports: [],
+  imports: [
+    FormsModule
+  ],
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.css',
 })
 export class ModalComponent {
   @Output() closeModal = new EventEmitter<void>();
   @Output() addTask = new EventEmitter<ModalModelComponent>();
+
   enteredTitle: string = '';
   enteredSummary: string = '';
   enteredDate: string = '';

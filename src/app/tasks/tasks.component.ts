@@ -19,7 +19,9 @@ export class TasksComponent {
   @Input({required: true}) userName?: string;
   @Input({required: true}) userTasks?: UserTasks;
   @Input({required: true}) userId?: string
+
   @Output() completeTask = new EventEmitter<string>();
+  @Output() createTask = new EventEmitter<TaskItem>();
 
   canShowModal: boolean = false;
 
@@ -32,14 +34,15 @@ export class TasksComponent {
   }
 
   onAddTask(taskData: ModalModelComponent) {
-    this.userTasks?.unshift(<TaskItem>{
+    const newTask: TaskItem = {
       id: new Date().getTime().toString(),
-      userId: this.userId,
+      userId: this.userId!,
       title: taskData.title,
       summary: taskData.summary,
       dueDate: taskData.date
-    })
+    }
 
+    this.createTask.emit(newTask)
     this.onClickManageModal()
   }
 }
