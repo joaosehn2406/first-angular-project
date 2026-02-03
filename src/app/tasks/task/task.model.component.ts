@@ -1,4 +1,4 @@
-interface TaskItem {
+export interface TaskItem {
   id: string,
   userId: string,
   title: string,
