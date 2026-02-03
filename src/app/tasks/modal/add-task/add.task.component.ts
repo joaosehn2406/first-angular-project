@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Output} from '@angular/core';
-import {ModalModelComponent} from './modal.model.component';
+import {AddTaskModelComponent} from './add.task.model.component';
 import {FormsModule} from '@angular/forms';
 
 @Component({
@@ -7,12 +7,12 @@ import {FormsModule} from '@angular/forms';
   imports: [
     FormsModule
   ],
-  templateUrl: './modal.component.html',
-  styleUrl: './modal.component.css',
+  templateUrl: './add.task.component.html',
+  styleUrl: './add.task.component.css',
 })
-export class ModalComponent {
+export class AddTaskComponent {
   @Output() closeModal = new EventEmitter<void>();
-  @Output() addTask = new EventEmitter<ModalModelComponent>();
+  @Output() addTask = new EventEmitter<AddTaskModelComponent>();
 
   enteredTitle: string = '';
   enteredSummary: string = '';

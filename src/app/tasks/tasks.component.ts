@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {TaskComponent} from './task/task.component';
-import {ModalComponent} from './modal/modal.component';
-import {ModalModelComponent} from './modal/modal.model.component';
+import {AddTaskComponent} from './modal/add-task/add.task.component';
+import {AddTaskModelComponent} from './modal/add-task/add.task.model.component';
 import {TaskItem} from './task/task.model.component';
 
 type UserTasks = TaskItem[];
@@ -10,7 +10,7 @@ type UserTasks = TaskItem[];
   selector: 'app-tasks',
   imports: [
     TaskComponent,
-    ModalComponent
+    AddTaskComponent
   ],
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.css',
@@ -38,7 +38,7 @@ export class TasksComponent {
     this.canShowModal = !this.canShowModal
   }
 
-  onAddTask(taskData: ModalModelComponent) {
+  onAddTask(taskData: AddTaskModelComponent) {
     const newTask: TaskItem = {
       id: new Date().getTime().toString(),
       userId: this.userId!,
