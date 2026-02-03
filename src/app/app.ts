@@ -34,6 +34,10 @@ export class App {
     this.userTasks = this.userTasks?.filter((task) => task.id !== id)
   }
 
+  onRemoveTask(id: string) {
+    this.userTasks = this.userTasks.filter((task) => task.id !== id)
+  }
+
   onCreateTask(task: TaskItem) {
     this.userTasks.unshift(task)
   }

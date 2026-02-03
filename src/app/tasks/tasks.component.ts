@@ -21,12 +21,17 @@ export class TasksComponent {
   @Input({required: true}) userId?: string
 
   @Output() completeTask = new EventEmitter<string>();
+  @Output() removeTask = new EventEmitter<string>();
   @Output() createTask = new EventEmitter<TaskItem>();
 
   canShowModal: boolean = false;
 
   onCompleteTask(id: string) {
     this.completeTask.emit(id);
+  }
+
+  onRemoveTask(id: string) {
+    this.removeTask.emit(id)
   }
 
   onClickManageModal() {

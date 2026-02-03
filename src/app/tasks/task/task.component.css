@@ -13,8 +13,10 @@ time {
 }
 
 .actions {
+  display: flex;
   text-align: right;
-  margin: 0;
+  justify-content: flex-end;
+  gap: 1.5rem;
 }
 
 .actions button {
@@ -30,10 +32,25 @@ time {
   transition: all 0.3s ease;
 }
 
+.actions button.remove {
+  background-color: #bf0808;
+}
+
+.actions button.remove:hover,
+.actions button.remove:active {
+  background-color: #dc2626;
+  box-shadow: 0 8px 18px rgba(220, 38, 38, 0.55),
+  0 3px 8px rgba(153, 27, 27, 0.45);
+}
+
 .actions button:hover,
 .actions button:active {
   background-color: #4a0774;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+.actions button.remove:active {
+  background-color: #670909;
 }
 
 .actions button:active {

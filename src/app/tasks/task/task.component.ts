@@ -17,8 +17,13 @@ interface UserTasks {
 export class TaskComponent {
   @Input({required: true}) userTasks!: UserTasks;
   @Output() complete = new EventEmitter<string>();
+  @Output() removeTask = new EventEmitter<string>();
 
   onCompleteTask() {
     this.complete.emit(this.userTasks.id);
+  }
+
+  onRemoveTask() {
+    this.removeTask.emit(this.userTasks.id)
   }
 }
