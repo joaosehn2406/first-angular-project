@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {RemoveTask} from '../modal/remove-task/remove-task';
 import {Card} from '../../shared/card/card';
+import {DatePipe} from '@angular/common';
 
 interface UserTasks {
   id: string,
@@ -14,7 +15,8 @@ interface UserTasks {
   selector: 'app-task',
   imports: [
     RemoveTask,
-    Card
+    Card,
+    DatePipe
   ],
   templateUrl: './task.component.html',
   styleUrl: './task.component.css',

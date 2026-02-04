@@ -5,7 +5,7 @@
 <app-card>
   <article>
     <h2>{{ userTasks.title }}</h2>
-    <time>{{ userTasks.dueDate }}</time>
+    <time>{{ userTasks.dueDate | date:'fullDate' }}</time>
     <p>{{ userTasks.summary }}</p>
     <p class="actions">
       <button class="remove" (click)="onClickManageModel()">Remove</button>
