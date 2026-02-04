@@ -1,5 +1,5 @@
 @if (canShowModal) {
-  <app-modal (closeModal)="onClickManageModal()" (addTask)="onAddTask($event)" />
+  <app-modal (closeModal)="onClickManageModal()" (addTask)="onAddTask($event)" [userId]="userId!"/>
 }
 
 <section id="tasks">
