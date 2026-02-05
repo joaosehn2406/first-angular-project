@@ -1,7 +1,8 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, inject, Input} from '@angular/core';
 import {RemoveTask} from '../modal/remove-task/remove-task';
 import {Card} from '../../shared/card/card';
 import {DatePipe} from '@angular/common';
+import {TasksService} from '../tasks.service';
 
 interface UserTasks {
   id: string,
@@ -23,17 +24,17 @@ interface UserTasks {
 })
 export class TaskComponent {
   @Input({required: true}) userTasks!: UserTasks;
-  @Output() complete = new EventEmitter<string>();
-  @Output() removeTask = new EventEmitter<string>();
+
+  private tasksService = inject(TasksService)
 
   canShowRemoveDialog: boolean = false
 
   onCompleteTask() {
-    this.complete.emit(this.userTasks.id);
+    this.tasksService.remove(this.userTasks.id);
   }
 
   onRemoveTask() {
-    this.removeTask.emit(this.userTasks.id)
+    this.tasksService.remove(this.userTasks.id)
   }
 
   onClickManageModel() {

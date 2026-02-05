@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, inject, Input} from '@angular/core';
 import {TaskComponent} from './task/task.component';
 import {AddTaskComponent} from './modal/add-task/add.task.component';
 import {AddTaskModelComponent} from './modal/add-task/add.task.model.component';
@@ -20,20 +20,11 @@ export class TasksComponent {
 
   canShowModal: boolean = false;
 
-  constructor(private taskService: TasksService) {
-  }
+  private tasksService = inject(TasksService)
 
   get userTasks(): TaskItem[] {
     if (!this.userId) return [];
-    return this.taskService.getByUser(this.userId);
-  }
-
-  onCompleteTask(id: string) {
-    this.taskService.remove(id)
-  }
-
-  onRemoveTask(id: string) {
-    this.taskService.remove(id)
+    return this.tasksService.getByUser(this.userId);
   }
 
   onClickManageModal() {
@@ -49,7 +40,7 @@ export class TasksComponent {
       dueDate: taskData.date
     }
 
-    this.taskService.add(newTask)
+    this.tasksService.add(newTask)
     this.onClickManageModal()
   }
 }
