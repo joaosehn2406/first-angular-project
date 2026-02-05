@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
-import {TaskItem} from './task/task.model.component';
+import {UserTasks} from './task/task.model.component';
 import {DUMMY_USER_TASKS} from '../data/dummy-tasks';
 
 @Injectable({providedIn: 'root'})
 export class TasksService {
-  private userTasks: TaskItem[] = [...DUMMY_USER_TASKS]
+  private userTasks: UserTasks[] = [...DUMMY_USER_TASKS]
 
   constructor() {
     const tasks = localStorage.getItem('tasks');
@@ -18,7 +18,7 @@ export class TasksService {
     return this.userTasks.filter(task => task.userId === userId);
   }
 
-  add(task: TaskItem) {
+  add(task: UserTasks) {
     this.userTasks.unshift({
       id: new Date().getTime().toString(),
       userId: task.userId,

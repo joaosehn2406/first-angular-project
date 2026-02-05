@@ -1,14 +1,14 @@
 import {Component, inject, Input} from '@angular/core';
 import {TaskComponent} from './task/task.component';
-import {AddTaskComponent} from './modal/add-task/add.task.component';
-import {TaskItem} from './task/task.model.component';
+import {AddTasksComponent} from './modal/add-tasks/add.tasks.component';
+import {UserTasks} from './task/task.model.component';
 import {TasksService} from './tasks.service';
 
 @Component({
   selector: 'app-tasks',
   imports: [
     TaskComponent,
-    AddTaskComponent
+    AddTasksComponent
   ],
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.css',
@@ -21,7 +21,7 @@ export class TasksComponent {
 
   private tasksService = inject(TasksService)
 
-  get userTasks(): TaskItem[] {
+  get userTasks(): UserTasks[] {
     if (!this.userId) return [];
     return this.tasksService.getByUser(this.userId);
   }

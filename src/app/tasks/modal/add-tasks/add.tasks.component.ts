@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {AddTaskModelComponent} from './add.task.model.component';
+import {AddTasksModelComponent} from './add.tasks.model.component';
 import {FormsModule} from '@angular/forms';
 import {TasksService} from '../../tasks.service';
 
@@ -8,13 +8,13 @@ import {TasksService} from '../../tasks.service';
   imports: [
     FormsModule
   ],
-  templateUrl: './add.task.component.html',
-  styleUrl: './add.task.component.css',
+  templateUrl: './add.tasks.component.html',
+  styleUrl: './add.tasks.component.css',
 })
-export class AddTaskComponent {
+export class AddTasksComponent {
   @Input({required: true}) userId!: string
   @Output() closeModal = new EventEmitter<void>();
-  @Output() addTask = new EventEmitter<AddTaskModelComponent>();
+  @Output() addTask = new EventEmitter<AddTasksModelComponent>();
 
   enteredTitle: string = '';
   enteredSummary: string = '';

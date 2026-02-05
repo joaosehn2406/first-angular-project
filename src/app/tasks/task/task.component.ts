@@ -1,23 +1,16 @@
 import {Component, inject, Input} from '@angular/core';
-import {RemoveTask} from '../modal/remove-task/remove-task';
+import {RemoveTasksComponent} from '../modal/remove-tasks/remove.tasks.component';
 import {Card} from '../../shared/card/card';
 import {DatePipe} from '@angular/common';
 import {TasksService} from '../tasks.service';
-
-interface UserTasks {
-  id: string,
-  userId: string,
-  title: string,
-  summary: string,
-  dueDate: string
-}
+import {UserTasks} from './task.model.component';
 
 @Component({
   selector: 'app-task',
   imports: [
-    RemoveTask,
     Card,
-    DatePipe
+    DatePipe,
+    RemoveTasksComponent
   ],
   templateUrl: './task.component.html',
   styleUrl: './task.component.css',

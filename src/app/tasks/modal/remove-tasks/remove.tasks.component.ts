@@ -2,14 +2,14 @@ import {Component, EventEmitter, Output} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 
 @Component({
-  selector: 'app-remove-task',
+  selector: 'app-remove-tasks',
   imports: [
     FormsModule
   ],
-  templateUrl: './remove-task.html',
-  styleUrl: './remove-task.css',
+  templateUrl: './remove.tasks.component.html',
+  styleUrl: './remove.tasks.component.css',
 })
-export class RemoveTask {
+export class RemoveTasksComponent {
   @Output() onDismissModal = new EventEmitter<void>();
   @Output() onConfirmModal = new EventEmitter<void>();
 
