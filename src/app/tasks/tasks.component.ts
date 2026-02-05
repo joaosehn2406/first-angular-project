@@ -1,7 +1,6 @@
 import {Component, inject, Input} from '@angular/core';
 import {TaskComponent} from './task/task.component';
 import {AddTaskComponent} from './modal/add-task/add.task.component';
-import {AddTaskModelComponent} from './modal/add-task/add.task.model.component';
 import {TaskItem} from './task/task.model.component';
 import {TasksService} from './tasks.service';
 
@@ -29,18 +28,5 @@ export class TasksComponent {
 
   onClickManageModal() {
     this.canShowModal = !this.canShowModal
-  }
-
-  onAddTask(taskData: AddTaskModelComponent) {
-    const newTask: TaskItem = {
-      id: new Date().getTime().toString(),
-      userId: this.userId!,
-      title: taskData.title,
-      summary: taskData.summary,
-      dueDate: taskData.date
-    }
-
-    this.tasksService.add(newTask)
-    this.onClickManageModal()
   }
 }
