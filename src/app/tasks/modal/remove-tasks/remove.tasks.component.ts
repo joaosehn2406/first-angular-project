@@ -1,11 +1,8 @@
 import {Component, EventEmitter, Output} from '@angular/core';
-import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-remove-tasks',
-  imports: [
-    FormsModule
-  ],
+  standalone: false,
   templateUrl: './remove.tasks.component.html',
   styleUrl: './remove.tasks.component.css',
 })

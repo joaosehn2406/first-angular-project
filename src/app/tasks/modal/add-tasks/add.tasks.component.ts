@@ -1,11 +1,10 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {AddTasksModelComponent} from './add.tasks.model.component';
-import {FormsModule} from '@angular/forms';
 import {TasksService} from '../../tasks.service';
 
 @Component({
   selector: 'app-modal',
-  imports: [FormsModule],
+  standalone: false,
   templateUrl: './add.tasks.component.html',
   styleUrl: './add.tasks.component.css',
 })
