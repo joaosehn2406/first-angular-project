@@ -4,6 +4,7 @@ import {Card} from '../shared/card/card';
 
 @Component({
   selector: 'app-user',
+  standalone: true,
   imports: [
     Card
   ],
