@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, inject, Input, Output} from '@angular/core';
 import {AddTasksModelComponent} from './add.tasks.model.component';
 import {TasksService} from '../../tasks.service';
 
@@ -17,15 +17,14 @@ export class AddTasksComponent {
   enteredSummary: string = '';
   enteredDate: string = '';
 
-  constructor(private taskService: TasksService) {
-  }
+  private tasksService = inject(TasksService)
 
   onClickCloseModal() {
     this.closeModal.emit();
   }
 
   onSubmit() {
-    this.taskService.add({
+    this.tasksService.add({
       title: this.enteredTitle,
       summary: this.enteredSummary,
       dueDate: this.enteredDate,
