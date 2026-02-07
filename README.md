@@ -49,7 +49,6 @@ Durante o desenvolvimento, eu consolidei principalmente:
 - HTML / CSS
 - Template-driven forms (FormsModule)
 - localStorage (persistência)
-- Testes via `ng test` (quando configurado no projeto)
 
 ---
 
@@ -68,7 +67,7 @@ Você precisa ter instalado:
 
 1) Clone o repositório:
 ```bash
-git clone <URL_DO_REPO>
+git clone https://github.com/joaosehn2406/task-management-project
 cd task-management-project-main
 ```
 
@@ -84,15 +83,6 @@ npm start
 
 4) Acesse:
 - `http://localhost:4200`
-
----
-
-## ✅ Testes
-
-Se o projeto estiver com testes configurados:
-```bash
-npm test
-```
 
 ---
 
