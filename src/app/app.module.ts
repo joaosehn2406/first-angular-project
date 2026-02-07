@@ -1,27 +1,26 @@
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
-import {HeaderComponent} from './header/header.component';
-import {UserComponent} from './user/user.component';
-import {TasksComponent} from './tasks/tasks.component';
 import {BrowserModule} from '@angular/platform-browser';
-import {CardComponent} from './shared/card/card.component';
-import {TaskComponent} from './tasks/task/task.component';
-import {RemoveTasksComponent} from './tasks/modal/remove-tasks/remove.tasks.component';
-import {AddTasksComponent} from './tasks/modal/add-tasks/add.tasks.component';
 import {FormsModule} from '@angular/forms';
+import {SharedModule} from './shared/shared.module';
+import {UserModule} from './user/user.module';
+import {HeaderModule} from './header/header.module';
+import {ModalModule} from './tasks/modal/modal.module';
+import {TaskModule} from './tasks/task/task.module';
+import {TasksModule} from './tasks/tasks.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    UserComponent,
-    TasksComponent,
-    TaskComponent,
-    CardComponent,
-    RemoveTasksComponent,
-    AddTasksComponent],
+    AppComponent],
   bootstrap: [AppComponent],
-  imports: [BrowserModule, FormsModule]
+  imports: [BrowserModule,
+    FormsModule,
+    SharedModule,
+    UserModule,
+    HeaderModule,
+    ModalModule,
+    TaskModule,
+    TasksModule]
 })
 
 export class AppModule {}
