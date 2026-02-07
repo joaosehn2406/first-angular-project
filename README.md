@@ -1,59 +1,113 @@
-# FirstAngularProject
+# EasyTask — Gerenciador de Tarefas (Angular)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.5.
+Um app de **gerenciamento de tarefas** construído com **Angular + TypeScript**, pensado para praticar e demonstrar na prática um fluxo completo de front-end: **listar, criar e remover tarefas**, com uma interface simples, organizada e fácil de manter.
 
-## Development server
+A ideia aqui foi criar um projeto que não é só “tela bonita”: ele tem **estrutura**, **boas separações**, e conceitos essenciais de Angular aplicados do jeito certo.
 
-To start a local development server, run:
+---
 
+## 💡 O que esse projeto entrega
+
+- Lista de tarefas por usuário
+- Criação de tarefa com formulário (título, descrição e data)
+- Remoção de tarefa com **modal de confirmação**
+- Marcar tarefa como concluída
+- Persistência no navegador com **localStorage** (suas tarefas continuam lá mesmo após recarregar)
+
+---
+
+## 🧱 Por que esse projeto é bem estruturado
+
+Este projeto foi organizado para ficar fácil de evoluir:
+
+- Componentes pequenos e com responsabilidade clara
+- Separação por módulos (reuso e organização)
+- Lógica centralizada em **Service** (estado e persistência)
+- Comunicação entre componentes com `@Input` / `@Output`
+- Composição de UI usando `ng-content` (reutilização real)
+
+---
+
+## 🧠 Aprendizados consolidados
+
+Durante o desenvolvimento, eu consolidei principalmente:
+
+- Estruturação de projeto Angular e organização por módulos
+- Criação de componentes reutilizáveis e composição de layout
+- Comunicação pai → filho e filho → pai (Input/Output e EventEmitter)
+- Injeção de dependências e boas práticas de Services
+- Persistência de dados no front (localStorage) e gerenciamento de estado
+- Formulários com `FormsModule` + `ngModel`
+- Renderização moderna de templates com control flow (`@if`, `@for`) — quando aplicável no Angular atual
+
+---
+
+## 🛠️ Tecnologias utilizadas
+
+- Angular
+- TypeScript
+- HTML / CSS
+- Template-driven forms (FormsModule)
+- localStorage (persistência)
+- Testes via `ng test` (quando configurado no projeto)
+
+---
+
+## 🚀 Como rodar o projeto
+
+### Pré-requisitos
+
+Você precisa ter instalado:
+
+- **Node.js** (recomendado: **LTS / Node 20+**)
+- **npm** (vem junto com o Node)
+
+> Não é obrigatório instalar Angular CLI globalmente. O projeto pode rodar com as dependências instaladas via `npm`.
+
+### Passos
+
+1) Clone o repositório:
 ```bash
-ng serve
+git clone <URL_DO_REPO>
+cd task-management-project-main
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+2) Instale as dependências:
 ```bash
-ng generate component component-name
+npm install
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
+3) Rode o projeto:
 ```bash
-ng generate --help
+npm start
 ```
 
-## Building
+4) Acesse:
+- `http://localhost:4200`
 
-To build the project run:
+---
 
+## ✅ Testes
+
+Se o projeto estiver com testes configurados:
 ```bash
-ng build
+npm test
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 📦 Build de produção
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
+Gerar build otimizado:
 ```bash
-ng test
+npm run build
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 📌 Próximas melhorias (ideias)
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Integração com API (CRUD real)
+- Filtros por status/data + busca
+- Melhorias de acessibilidade e navegação por teclado
+- Cobertura de testes para fluxo de criação/remoção
